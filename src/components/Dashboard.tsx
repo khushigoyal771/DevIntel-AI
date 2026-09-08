@@ -107,7 +107,7 @@ export default function Dashboard({ repoData, githubToken }: { repoData: RepoDat
                 <YAxis dataKey="name" type="category" axisLine={false} tickLine={false} tick={{ fill: '#94a3b8', fontSize: 13 }} width={80} />
                 <Tooltip cursor={{ fill: '#1e293b', opacity: 0.4 }} contentStyle={{ backgroundColor: 'rgba(15, 23, 42, 0.9)', borderColor: '#334155', borderRadius: '8px', backdropFilter: 'blur(8px)', color: '#f8fafc' }} />
                 <Bar dataKey="value" radius={[0, 4, 4, 0]} barSize={24}>
-                  {languages.map((entry, index) => (
+                  {languages.map((_, index) => (
                     <Cell key={`cell-${index}`} fill="url(#colorUv)" />
                   ))}
                 </Bar>

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { GitBranch, ArrowRight, Shield, AlertCircle, Cpu, BrainCircuit, Network } from 'lucide-react';
+import { GitBranch, ArrowRight, AlertCircle, Cpu, BrainCircuit, Network } from 'lucide-react';
 import type { RepoData } from '../types';
 import { getOctokit, fetchRepoDetails } from '../lib/github';
 import { motion } from 'framer-motion';
