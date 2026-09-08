@@ -13,6 +13,7 @@
     "@google/generative-ai": "^0.24.1",
     "@monaco-editor/react": "^4.7.0",
     "clsx": "^2.1.1",
+    "framer-motion": "^13.2.0",
     "lucide-react": "^1.42.0",
     "octokit": "^5.0.5",
     "react": "^19.2.8",
