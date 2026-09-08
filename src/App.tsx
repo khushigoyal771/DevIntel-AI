@@ -30,10 +30,10 @@ function App() {
   }
 
   return (
-    <div className="flex h-screen bg-slate-950 text-slate-50 font-sans">
+    <div className="flex h-screen bg-transparent text-slate-50 font-sans relative">
       {/* Sidebar */}
-      <div className="w-64 bg-slate-900 border-r border-slate-800 flex flex-col">
-        <div className="p-4 border-b border-slate-800 flex items-center gap-3">
+      <div className="w-64 bg-slate-900/60 backdrop-blur-xl border-r border-white/5 flex flex-col z-20">
+        <div className="p-4 border-b border-white/5 flex items-center gap-3">
           <div className="w-8 h-8 rounded bg-blue-600 flex items-center justify-center">
             <Shield className="w-5 h-5 text-white" />
           </div>
@@ -64,7 +64,7 @@ function App() {
           />
         </nav>
 
-        <div className="p-4 border-t border-slate-800 space-y-1">
+        <div className="p-4 border-t border-white/5 space-y-1">
           <NavItem 
             icon={<Settings className="w-5 h-5" />} 
             label="Settings" 
