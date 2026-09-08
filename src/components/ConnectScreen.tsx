@@ -20,12 +20,17 @@ export default function ConnectScreen({ onConnect, githubToken }: ConnectScreenP
     setLoading(true);
 
     try {
-      // Parse github URL or format "owner/repo"
       let owner = '';
       let repo = '';
       
-      if (repoUrl.includes('github.com')) {
-        const url = new URL(repoUrl);
+      let cleanUrl = repoUrl.trim();
+      // Remove trailing .git if present
+      if (cleanUrl.endsWith('.git')) {
+        cleanUrl = cleanUrl.slice(0, -4);
+      }
+      
+      if (cleanUrl.includes('github.com')) {
+        const url = new URL(cleanUrl);
         const parts = url.pathname.split('/').filter(Boolean);
         if (parts.length >= 2) {
           owner = parts[0];
@@ -34,7 +39,7 @@ export default function ConnectScreen({ onConnect, githubToken }: ConnectScreenP
           throw new Error('Invalid GitHub URL');
         }
       } else {
-        const parts = repoUrl.split('/');
+        const parts = cleanUrl.split('/');
         if (parts.length === 2) {
           owner = parts[0];
           repo = parts[1];
